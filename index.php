@@ -16,7 +16,7 @@ catch(PDOException $e)
     echo "Connection failed: " . $e->getMessage();
     }
 
-    $query = $conn->prepare("SELECT * FROM characters");
+    $query = $conn->prepare("SELECT * FROM characters ORDER BY `name`");
     $query->execute();
     $result = $query->fetchall();
 
